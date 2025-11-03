@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>Bookings</h1>
+</header>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>VRM</th>
+            <th>Status</th>
+            <th>Invoice</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        ${booking_rows}
+        </tbody>
+    </table>
+    <a href="/booking/new" class="btn">New Booking</a>
+    <a href="/" class="btn">Back to Dashboard</a>
+</div>
+</body>
+</html>

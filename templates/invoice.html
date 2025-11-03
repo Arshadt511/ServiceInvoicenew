@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice ${invoice_number}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>${company_name}</h1>
+    <div class="small-text">
+        ${address_line1}, ${address_line2}, ${address_city}, ${address_county}, ${address_postcode}<br>
+        Tel: ${phone1}${phone2 and ' / ' + phone2}<br>
+        Email: ${email}<br>
+        Company No.: ${company_number} &nbsp;&nbsp; FCA No.: ${fca_number}
+    </div>
+</header>
+<div class="container">
+    <h2>Invoice</h2>
+    <div class="invoice-header">
+        <p><strong>Invoice Number:</strong> ${invoice_number}</p>
+        <p><strong>Issue Date:</strong> ${issue_date}</p>
+        <p><strong>Due Date:</strong> ${due_date}</p>
+    </div>
+    <div class="invoice-header">
+        <h3>Bill To</h3>
+        <p>${customer_name}<br>${customer_address}<br>${customer_phone}<br>${customer_email}</p>
+    </div>
+    <div class="invoice-header">
+        <h3>Vehicle Details</h3>
+        <p>VRM: ${vehicle_vrm}<br>Make/Model: ${vehicle_make} ${vehicle_model}<br>Mileage: ${vehicle_mileage}</p>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>Net</th>
+            <th>VAT</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        ${items_rows}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan="4"></th>
+            <th>Subtotal:</th>
+            <th>${total_ex}</th>
+        </tr>
+        <tr>
+            <th colspan="4"></th>
+            <th>VAT:</th>
+            <th>${total_vat}</th>
+        </tr>
+        <tr>
+            <th colspan="4"></th>
+            <th>Total Due:</th>
+            <th>${total_inc}</th>
+        </tr>
+        </tfoot>
+    </table>
+    <p><strong>Payment Methods:</strong> ${payment_methods}</p>
+    <p><strong>Bank Details:</strong> ${bank_details}</p>
+    <p><strong>Next Service Due:</strong> ${next_service_date}</p>
+    <p><strong>Terms & Conditions:</strong> ${terms_conditions}</p>
+    <div class="no-print">
+        <a href="/invoices" class="btn">Back to Invoice List</a>
+        <button onclick="window.print()" class="btn">Print Invoice</button>
+    </div>
+</div>
+</body>
+</html>

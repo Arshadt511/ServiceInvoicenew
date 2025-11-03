@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoices</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>Invoices</h1>
+</header>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Total</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        ${invoice_rows}
+        </tbody>
+    </table>
+    <a href="/" class="btn">Back to Dashboard</a>
+    <a href="/booking/new" class="btn">New Booking</a>
+</div>
+</body>
+</html>

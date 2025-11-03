@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Booking - Service Invoicing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>New Booking</h1>
+</header>
+<div class="container">
+    <form method="post" action="/booking/new">
+        <h2>Customer Information</h2>
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea name="address" id="address" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="booking_date">Preferred Booking Date</label>
+            <!-- Default to today using JavaScript in the browser; fallback to blank -->
+            <input type="date" name="booking_date" id="booking_date">
+        </div>
+        <h2>Vehicle Information</h2>
+        <div class="form-group">
+            <label for="vrm">Registration (VRM)</label>
+            <input type="text" name="vrm" id="vrm" required>
+        </div>
+        <div class="form-group">
+            <label for="make">Make</label>
+            <input type="text" name="make" id="make">
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" name="model" id="model">
+        </div>
+        <div class="form-group">
+            <label for="mileage">Current Mileage</label>
+            <input type="number" name="mileage" id="mileage" min="0">
+        </div>
+        <h2>Service Selection</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Price</th>
+                <th>VAT</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            ${services_rows}
+            </tbody>
+        </table>
+        <h3>Miscellaneous Parts</h3>
+        <p>You can add up to three custom parts or miscellaneous items below. Leave fields blank if not needed.</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Unit Price (£)</th>
+                <th>VAT Rate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text" name="custom_name_1" placeholder="e.g. Oil Filter"></td>
+                <td><input type="number" name="custom_qty_1" min="0" value="0" style="width:80px"></td>
+                <td><input type="number" name="custom_price_1" min="0" step="0.01" placeholder="0.00" style="width:100px"></td>
+                <td><input type="number" name="custom_vat_1" min="0" max="1" step="0.01" value="0.20" style="width:80px"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="custom_name_2" placeholder=""></td>
+                <td><input type="number" name="custom_qty_2" min="0" value="0" style="width:80px"></td>
+                <td><input type="number" name="custom_price_2" min="0" step="0.01" placeholder="0.00" style="width:100px"></td>
+                <td><input type="number" name="custom_vat_2" min="0" max="1" step="0.01" value="0.20" style="width:80px"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="custom_name_3" placeholder=""></td>
+                <td><input type="number" name="custom_qty_3" min="0" value="0" style="width:80px"></td>
+                <td><input type="number" name="custom_price_3" min="0" step="0.01" placeholder="0.00" style="width:100px"></td>
+                <td><input type="number" name="custom_vat_3" min="0" max="1" step="0.01" value="0.20" style="width:80px"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <label for="notes">Notes / Additional details</label>
+            <textarea name="notes" id="notes" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Booking</button>
+        <a href="/" class="btn">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

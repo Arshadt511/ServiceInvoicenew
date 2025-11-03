@@ -1,0 +1,104 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2, h3 {
+    margin-top: 0;
+    color: #1b1b1b;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.table th {
+    background-color: #eee;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px 5px 5px 0;
+    background-color: #d62236;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #b71c2f;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.invoice-header {
+    margin-bottom: 20px;
+}
+
+.small-text {
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+    header, .no-print {
+        display: none;
+    }
+    .table th {
+        background-color: #ddd;
+    }
+}
